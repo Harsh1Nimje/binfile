@@ -1,0 +1,380 @@
+Here’s a breakdown for each question with the steps to run the code in VS Code's terminal:
+
+---
+
+### Question Set 1
+
+**Q1.a**: **Arrow Function in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `arrowFunction.js`.
+  2. Run the code:
+     ```bash
+     node arrowFunction.js
+     ```
+
+**Q1.b**: **HTTP Server using Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `server.js`.
+  2. Run the server:
+     ```bash
+     node server.js
+     ```
+  3. Open `http://localhost:3000` in a browser.
+
+---
+
+### Question Set 2
+
+**Q2.a**: **DOM Manipulation in HTML**
+- **Steps**:
+  1. Save the code in a file, e.g., `dom.html`.
+  2. Open the file in a browser or use the Live Server extension in VS Code.
+
+**Q2.b**: **useEffect in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `ExampleComponent.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 3
+
+**Q3.a**: **Class with Inheritance in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `inheritance.js`.
+  2. Run the code:
+     ```bash
+     node inheritance.js
+     ```
+
+**Q3.b**: **Event Handling in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `EventExample.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 4
+
+**Q4.a**: **Promises in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `promiseExample.js`.
+  2. Run the code:
+     ```bash
+     node promiseExample.js
+     ```
+
+**Q4.b**: **Controlled Components in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `ControlledForm.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 5
+
+**Q5.a**: **Fetch Data in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `fetchExample.js`.
+  2. Run the code:
+     ```bash
+     node fetchExample.js
+     ```
+
+**Q5.b**: **State Management with Hooks in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `Counter.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 6
+
+**Q6.a**: **Destructuring in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `destructuring.js`.
+  2. Run the code:
+     ```bash
+     node destructuring.js
+     ```
+
+**Q6.b**: **Routing in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `App.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 7
+
+**Q7.a**: **Iterators in JavaScript**
+- **Steps**:
+  1. Save the code in a file, e.g., `iterator.js`.
+  2. Run the code:
+     ```bash
+     node iterator.js
+     ```
+
+**Q7.b**: **Event Emitter in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `eventEmitter.js`.
+  2. Run the code:
+     ```bash
+     node eventEmitter.js
+     ```
+
+---
+
+### Question Set 8
+
+**Q8.a**: **Animation in React with CSS**
+- **Steps**:
+  1. Save the code in a component file, e.g., `AnimatedBox.js`, and create a CSS file for styling, e.g., `App.css`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+**Q8.b**: **Generators in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `generators.js`.
+  2. Run the code:
+     ```bash
+     node generators.js
+     ```
+
+---
+
+### Question Set 9
+
+**Q9.a**: **Dynamic CSS in JavaScript**
+- **Steps**:
+  1. Save the code in a file, e.g., `dynamicCSS.html`.
+  2. Open the file in a browser or use Live Server in VS Code.
+
+**Q9.b**: **Props in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `Greeting.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 10
+
+**Q10.a**: **Asynchronous Callbacks in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `readFileCallback.js`.
+  2. Run the code:
+     ```bash
+     node readFileCallback.js
+     ```
+
+**Q10.b**: **Custom Hook in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `useWindowWidth.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 11
+
+**Q11.a**: **Array Methods (map, filter, reduce) in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `arrayMethods.js`.
+  2. Run the code:
+     ```bash
+     node arrayMethods.js
+     ```
+
+**Q11.b**: **Webpack Bundling in React**
+- **Steps**:
+  1. Set up Webpack with the configuration provided in `webpack.config.js`.
+  2. Build the project:
+     ```bash
+     npm run build
+     ```
+  3. Open the `dist/index.html` file in a browser to view the bundled app.
+
+---
+
+### Question Set 12
+
+**Q12.a**: **Fetching API Data in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `UserList.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+**Q12.b**: **Using Buffer in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `bufferExample.js`.
+  2. Run the code:
+     ```bash
+     node bufferExample.js
+     ```
+
+---
+
+### Question Set 13
+
+**Q13.a**: **Template Literals in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `templateLiterals.js`.
+  2. Run the code:
+     ```bash
+     node templateLiterals.js
+     ```
+
+**Q13.b**: **Nested Routes in React Router**
+- **Steps**:
+  1. Save the code in a component file, e.g., `App.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 14
+
+**Q14.a**: **File System Operations (Read/Write) in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `fileOperations.js`.
+  2. Run the code:
+     ```bash
+     node fileOperations.js
+     ```
+
+**Q14.b**: **Component Lifecycle in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `LifecycleExample.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 15
+
+**Q15.a**: **Promise.all in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `promiseAll.js`.
+  2. Run the code:
+     ```bash
+     node promiseAll.js
+     ```
+
+**Q15.b**: **Controlled and Uncontrolled Components in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `ControlledUncontrolled.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 16
+
+**Q16.a**: **Simple Counter with Hooks in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `Counter.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+**Q16.b**: **Fetch API with POST Request in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `postRequest.js`.
+  2. Run the server:
+     ```bash
+     node postRequest.js
+     ```
+
+---
+
+### Question Set 17
+
+**Q17.a**: **Spread Operator in ES6**
+- **Steps**:
+  1. Save the code in a file, e.g., `spreadOperator.js`.
+  2. Run the code:
+     ```bash
+     node spreadOperator.js
+     ```
+
+**Q17.b**: **Event Handler in React**
+- **Steps**:
+  1. Save the code in a component file, e.g., `ClickHandlerComponent.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 18
+
+**Q18.a**: **Module Exports and Imports in Node.js**
+- **Steps**:
+  1. Save `greet` function in `module.js`.
+  2. Create another file, e.g., `index.js`, to import and use it.
+  3. Run the code:
+     ```bash
+     node index.js
+     ```
+
+**Q18.b**: **setTimeout in React Component**
+- **Steps**:
+  1. Save the code in a component file, e.g., `DelayedMessage.js`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+---
+
+### Question Set 19
+
+**Q19.a**: **Promises with File System in Node.js**
+- **Steps**:
+  1. Save the code in a file, e.g., `readFilePromise.js`.
+  2. Run the code:
+     ```bash
+     node readFilePromise.js
+     ```
+
+**Q19.b**: **Animation with React Transitions**
+- **Steps**:
+  1. Save the code in a component file, e.g., `AnimatedComponent.js`, and ensure the CSS for transitions is in `styles.css`.
+  2. Run the React app:
+     ```bash
+     npm start
+     ```
+
+--- 

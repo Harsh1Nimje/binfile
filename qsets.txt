@@ -1,0 +1,891 @@
+Question Set 1
+Q.1.
+a) Write a program to demonstrate the use of arrow functions in ES6.
+// Arrow Function Example
+const add = (a, b) => a + b;
+
+const result = add(5, 3);
+console.log(`The sum is: ${result}`);
+Explanation: This program defines an arrow function add that takes two parameters and returns their sum. Arrow functions provide a concise syntax for writing functions in JavaScript.
+________________________________________
+b) Write a program to implement a simple HTTP server using Node.js.
+// HTTP Server Example
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, World!\n');
+});
+
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});
+Explanation: This program creates an HTTP server using Node.js that listens on port 3000 and responds with "Hello, World!" to any request.
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 2
+Q.2.
+a) Write a program to manipulate DOM elements using JavaScript.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1 id="heading">Hello!</h1>
+    <button id="changeText">Change Text</button>
+
+    <script>
+        const button = document.getElementById('changeText');
+        button.addEventListener('click', () => {
+            const heading = document.getElementById('heading');
+            heading.textContent = 'Text Changed!';
+        });
+    </script>
+</body>
+</html>
+Explanation: This HTML file includes a heading and a button. When the button is clicked, the text of the heading is changed using JavaScript.
+b) Write a program to demonstrate the use of useEffect in a functional component in React.
+import React, { useEffect, useState } from 'react';
+
+function ExampleComponent() {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `Count: ${count}`;
+    }, [count]);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+}
+
+export default ExampleComponent;
+Explanation: This React functional component uses useEffect to update the document title whenever the count state changes.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 3
+Q.3.
+a) Write a program to create and use a class with inheritance in ES6.
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog('Rex');
+dog.speak();  // Output: Rex barks.
+Explanation: This program defines an Animal class and a Dog class that inherits from Animal. The speak method in Dog overrides the method in Animal.
+________________________________________
+b) Write a program to handle events in a React component.
+import React from 'react';
+
+function EventExample() {
+    const handleClick = () => {
+        alert('Button clicked!');
+    };
+
+    return (
+        <button onClick={handleClick}>
+            Click Me
+        </button>
+    );
+}
+
+export default EventExample;
+Explanation: This React component defines a button that triggers an alert when clicked.
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 4
+Q.4.
+a) Write a program to illustrate the Promise object in Node.js.
+// Promise Example
+const myPromise = new Promise((resolve, reject) => {
+    const success = true; // Change this to false to see rejection
+    if (success) {
+        resolve('Promise resolved successfully!');
+    } else {
+        reject('Promise rejected.');
+    }
+});
+
+myPromise
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
+Explanation: This program creates a Promise that resolves if success is true and rejects otherwise. It handles both the resolved and rejected states.
+________________________________________
+b) Write a program to create a form with controlled components in React.
+import React, { useState } from 'react';
+
+function ControlledForm() {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Submitted: ${inputValue}`);
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input 
+                type="text" 
+                value={inputValue} 
+                onChange={handleChange} 
+            />
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+
+export default ControlledForm;
+Explanation: This React component contains a form with an input field that updates the state as the user types, demonstrating a controlled component.
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 5
+Q.5.
+a) Write a program to use fetch to retrieve data from a public API in Node.js.
+const fetch = require('node-fetch');
+
+fetch('https://api.github.com/users/github')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+Explanation: This Node.js program uses fetch to get data from the GitHub API and logs the response to the console.
+________________________________________
+b) Write a program to demonstrate state management using hooks in a React component.
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
+        </div>
+    );
+}
+
+export default Counter;
+Explanation: This React component demonstrates state management using the useState hook to create a counter that can be incremented or decremented.
+
+_______________________________________________________________________________________________________________________________
+
+Question Set 6
+Q.6.
+a) Write a program that uses destructuring assignment in ES6.
+
+const person = {
+    name: 'Alice',
+    age: 25,
+    city: 'Wonderland'
+};
+
+const { name, age } = person;
+console.log(`Name: ${name}, Age: ${age}`);
+Explanation: This program demonstrates object destructuring to extract name and age from the person object.
+________________________________________
+b) Write a program to implement routing in a React single-page application.
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+function Home() {
+    return <h2>Home</h2>;
+}
+
+function About() {
+    return <h2>About</h2>;
+}
+
+function App() {
+    return (
+        <Router>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+            </Switch>
+        </Router>
+    );
+}
+
+export default App;
+Explanation: This program sets up routing in a React application using react-router-dom, allowing navigation between Home and About pages.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 7
+Q.7.
+a) Write a program to demonstrate the use of iterators in JavaScript.
+function* idGenerator() {
+    let id = 1;
+    while (true) {
+        yield id++;
+    }
+}
+
+const generator = idGenerator();
+
+console.log(generator.next().value); // 1
+console.log(generator.next().value); // 2
+console.log(generator.next().value); // 3
+Explanation: This program defines a generator function idGenerator that produces an infinite sequence of IDs.
+________________________________________
+b) Write a program that uses the event emitter module in Node.js.
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+myEmitter.on('event', () => {
+    console.log('An event occurred!');
+});
+
+myEmitter.emit('event'); // Triggers the event
+Explanation: This program creates an event emitter that listens for an event and logs a message when the event occurs.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 8
+Q.8.
+a) Write a program to create a simple animation in React using CSS transitions.
+import React, { useState } from 'react';
+import './App.css'; // Ensure you have this CSS file
+
+function AnimatedBox() {
+    const [isActive, setIsActive] = useState(false);
+
+    return (
+        <div>
+            <div className={`box ${isActive ? 'active' : ''}`} />
+            <button onClick={() => setIsActive(!isActive)}>Toggle Animation</button>
+        </div>
+    );
+}
+
+export default AnimatedBox;
+CSS (App.css):
+css
+Copy code
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: transform 0.5s;
+}
+
+.box.active {
+    transform: scale(1.5);
+}
+Explanation: This React component toggles an animation on a box when the button is clicked, using CSS transitions for smooth scaling.
+________________________________________
+b) Write a program to use generators to produce a sequence of numbers in ES6.
+function* numberSequence() {
+    let i = 1;
+    while (i <= 5) {
+        yield i++;
+    }
+}
+
+const sequence = numberSequence();
+for (let num of sequence) {
+    console.log(num); // Outputs: 1, 2, 3, 4, 5
+}
+Explanation: This program defines a generator function that yields a sequence of numbers from 1 to 5.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 9
+Q.9.
+a) Write a program to set CSS styles dynamically using JavaScript.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic CSS</title>
+</head>
+<body>
+    <div id="box" style="width: 100px; height: 100px; background-color: blue;"></div>
+    <button id="changeColor">Change Color</button>
+
+    <script>
+        const button = document.getElementById('changeColor');
+        button.addEventListener('click', () => {
+            const box = document.getElementById('box');
+            box.style.backgroundColor = box.style.backgroundColor === 'red' ? 'blue' : 'red';
+        });
+    </script>
+</body>
+</html>
+Explanation: This HTML file creates a box whose background color toggles between red and blue when a button is clicked.
+b) Write a program to demonstrate the use of props in a React component.
+import React from 'react';
+
+function Greeting({ name }) {
+    return <h1>Hello, {name}!</h1>;
+}
+
+function App() {
+    return <Greeting name="Alice" />;
+}
+
+export default App;
+Explanation: This React program demonstrates passing props to a component to display a greeting message.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 10
+Q.10.
+a) Write a program to implement asynchronous programming using callbacks in Node.js.
+const fs = require('fs');
+
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+Explanation: This program reads a file asynchronously using a callback. It handles errors and logs the file content to the console.
+________________________________________
+b) Write a program to create a custom hook in React.
+import { useState, useEffect } from 'react';
+
+function useWindowWidth() {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return width;
+}
+
+function App() {
+    const width = useWindowWidth();
+
+    return <h1>Window width: {width}px</h1>;
+}
+
+export default App;
+Explanation: This custom hook useWindowWidth tracks the window's width and updates it on resize events. It is used in the App component to display the current width.
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 11
+Q.11.
+a) Write a program to illustrate array methods in ES6 (like map, filter, reduce).
+const numbers = [1, 2, 3, 4, 5];
+
+// Using map
+const doubled = numbers.map(num => num * 2);
+console.log('Doubled:', doubled); // [2, 4, 6, 8, 10]
+
+// Using filter
+const evens = numbers.filter(num => num % 2 === 0);
+console.log('Evens:', evens); // [2, 4]
+
+// Using reduce
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log('Sum:', sum); // 15
+Explanation: This program demonstrates the use of map, filter, and reduce array methods to transform and aggregate data.
+________________________________________
+b) Write a program to bundle a React application using Webpack.
+1.	Install Webpack:
+npm install --save-dev webpack webpack-cli
+npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
+2.	Create webpack.config.js:
+const path = require('path');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
+            }
+        ]
+    },
+    devtool: 'source-map',
+    mode: 'development'
+};
+3.	Add scripts to package.json:
+"scripts": {
+    "build": "webpack"
+}
+4.	Run Webpack:
+npm run build
+Explanation: This setup configures Webpack to bundle a React application, compiling JSX and ES6 syntax with Babel.
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 12
+Q.12.
+a) Write a program to fetch and display user data from an API in React.
+import React, { useEffect, useState } from 'react';
+
+function UserList() {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(data => setUsers(data))
+            .catch(error => console.error('Error fetching users:', error));
+    }, []);
+
+    return (
+        <ul>
+            {users.map(user => (
+                <li key={user.id}>{user.name}</li>
+            ))}
+        </ul>
+    );
+}
+
+export default UserList;
+Explanation: This React component fetches user data from an API and displays it in a list.
+________________________________________
+b) Write a program that demonstrates the use of the Buffer class in Node.js.
+const buffer = Buffer.from('Hello, World!', 'utf8');
+
+console.log('Buffer content:', buffer);
+console.log('Buffer to string:', buffer.toString());
+Explanation: This program creates a Buffer from a string and demonstrates how to convert it back to a string.
+
+_______________________________________________________________________________________________________________________________
+
+Question Set 13
+Q.13.
+a) Write a program to demonstrate template literals in ES6.
+const name = 'Alice';
+const age = 25;
+const greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+
+console.log(greeting);
+Explanation: This program uses template literals to create a string that includes variables for name and age.
+________________________________________
+b) Write a program to create nested routes in a React Router application.
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+function Home() {
+    return <h2>Home</h2>;
+}
+
+function About() {
+    return (
+        <div>
+            <h2>About</h2>
+            <Link to="/about/team">Our Team</Link>
+            <Link to="/about/mission">Our Mission</Link>
+            <Switch>
+                <Route path="/about/team" component={Team} />
+                <Route path="/about/mission" component={Mission} />
+            </Switch>
+        </div>
+    );
+}
+
+function Team() {
+    return <h3>Our Team</h3>;
+}
+
+function Mission() {
+    return <h3>Our Mission</h3>;
+}
+
+function App() {
+    return (
+        <Router>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+            </Switch>
+        </Router>
+    );
+}
+
+export default App;
+Explanation: This program demonstrates nested routing in a React application using React Router.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 14
+Q.14.
+a) Write a program to read and write files using the file system module in Node.js.
+const fs = require('fs');
+
+// Writing to a file
+fs.writeFile('example.txt', 'Hello, Node.js!', (err) => {
+    if (err) {
+        console.error('Error writing file:', err);
+        return;
+    }
+    console.log('File written successfully.');
+
+    // Reading from the file
+    fs.readFile('example.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return;
+        }
+        console.log('File content:', data);
+    });
+});
+Explanation: This program writes text to a file and then reads it back, demonstrating file system operations in Node.js.
+________________________________________
+b) Write a program to manage component lifecycle methods in React.
+import React from 'react';
+
+class LifecycleExample extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+        console.log('Constructor');
+    }
+
+    componentDidMount() {
+        console.log('Component did mount');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('Component did update');
+    }
+
+    componentWillUnmount() {
+        console.log('Component will unmount');
+    }
+
+    increment = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+
+    render() {
+        console.log('Render');
+        return (
+            <div>
+                <p>Count: {this.state.count}</p>
+                <button onClick={this.increment}>Increment</button>
+            </div>
+        );
+    }
+}
+
+export default LifecycleExample;
+Explanation: This class component demonstrates various lifecycle methods, logging messages during each phase.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 15
+Q.15.
+a) Write a program to demonstrate the use of the Promise.all() method in Node.js.
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'foo'));
+const promise3 = new Promise((resolve, reject) => setTimeout(reject, 200, 'Error!'));
+
+Promise.all([promise1, promise2])
+    .then(values => {
+        console.log('Resolved values:', values);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+Explanation: This program uses Promise.all() to handle multiple promises concurrently and logs the resolved values or catches any errors.
+________________________________________
+b) Write a program to implement controlled and uncontrolled components in React forms.
+import React, { useRef, useState } from 'react';
+
+function ControlledUncontrolled() {
+    const [controlledValue, setControlledValue] = useState('');
+    const uncontrolledInput = useRef(null);
+
+    const handleControlledChange = (e) => {
+        setControlledValue(e.target.value);
+    };
+
+    const handleUncontrolledSubmit = (e) => {
+        e.preventDefault();
+        alert(`Uncontrolled input value: ${uncontrolledInput.current.value}`);
+    };
+
+    return (
+        <div>
+            <h2>Controlled Component</h2>
+            <input
+                type="text"
+                value={controlledValue}
+                onChange={handleControlledChange}
+            />
+            <h2>Uncontrolled Component</h2>
+            <form onSubmit={handleUncontrolledSubmit}>
+                <input type="text" ref={uncontrolledInput} />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    );
+}
+
+export default ControlledUncontrolled;
+Explanation: This React component demonstrates controlled and uncontrolled input elements.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 16
+Q.16.a: Simple Counter using Hooks in React
+import React, { useState } from 'react';
+
+function Counter() {
+  // Declare a state variable called 'count' with a default value of 0
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      {/* Increment count by 1 when the button is clicked */}
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      {/* Decrement count by 1 when the button is clicked */}
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      {/* Reset count to 0 when the button is clicked */}
+      <button onClick={() => setCount(0)}>Reset</button>
+    </div>
+  );
+}
+
+export default Counter;
+Explanation:
+•	We import useState from React to manage the state.
+•	We declare a state variable count initialized to 0.
+•	We create three buttons to increment, decrement, and reset the count.
+•	The setCount function updates the state whenever a button is clicked, causing the component to re-render with the updated count.
+Q.16.b: Fetch to Post Data to an API in Node.js
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = 3000;
+
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
+
+// Route to handle POST requests
+app.post('/api/data', (req, res) => {
+  const data = req.body;
+  console.log('Data received:', data);
+  res.status(200).send({ message: 'Data received successfully!', receivedData: data });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+Explanation:
+•	We create an Express server that listens on port 3000.
+•	We use body-parser to parse incoming JSON requests.
+•	We define a POST endpoint /api/data that logs the received data and responds with a confirmation message.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 17
+Q.17.a: Spread Operator in ES6
+// Original array
+const arr1 = [1, 2, 3];
+
+// Using spread operator to create a new array
+const arr2 = [...arr1, 4, 5];
+
+console.log(arr2); // Output: [1, 2, 3, 4, 5]
+
+// Original object
+const obj1 = { a: 1, b: 2 };
+
+// Using spread operator to create a new object
+const obj2 = { ...obj1, c: 3 };
+
+console.log(obj2); // Output: { a: 1, b: 2, c: 3 }
+Explanation:
+•	The spread operator (...) allows us to expand elements of an iterable (like an array) into a new array or object.
+•	In the example, arr2 combines elements from arr1 with new values 4 and 5.
+•	Similarly, obj2 combines properties from obj1 with a new property c.
+Q.17.b: Event Handler in a React Component
+import React from 'react';
+
+function ClickHandlerComponent() {
+  const handleClick = () => {
+    alert('Button clicked!');
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+}
+
+export default ClickHandlerComponent;
+Explanation:
+•	We define a functional React component ClickHandlerComponent.
+•	The handleClick function is called when the button is clicked, displaying an alert.
+•	The onClick event listener is used to bind the function to the button.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 18
+Q.18.a: Module Exports and Imports in Node.js
+module.js:
+// A simple module that exports a function
+const greet = (name) => {
+  return `Hello, ${name}!`;
+};
+
+module.exports = greet;
+index.js:
+const greet = require('./module');
+
+console.log(greet('Alice')); // Output: Hello, Alice!
+Explanation:
+•	In module.js, we define a function greet and export it using module.exports.
+•	In index.js, we import the greet function and call it, logging the result.
+Q.18.b: setTimeout in an Asynchronous Function in React
+import React, { useEffect, useState } from 'react';
+
+function DelayedMessage() {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMessage('Hello, World!');
+    }, 3000); // 3 seconds delay
+
+    return () => clearTimeout(timer); // Clean up the timer
+  }, []);
+
+  return <div>{message}</div>;
+}
+
+export default DelayedMessage;
+Explanation:
+•	We use useEffect to handle side effects, specifically to set a timer that updates the message after 3 seconds.
+•	The timer is cleaned up when the component unmounts to prevent memory leaks.
+
+_______________________________________________________________________________________________________________________________
+
+
+Question Set 19
+Q.19.a: Promise to Handle Asynchronous Operations in Node.js
+const fs = require('fs').promises;
+
+function readFile(filePath) {
+  return fs.readFile(filePath, 'utf-8')
+    .then(data => {
+      console.log('File content:', data);
+    })
+    .catch(err => {
+      console.error('Error reading file:', err);
+    });
+}
+
+readFile('example.txt');
+Explanation:
+•	We use the fs.promises API to read a file asynchronously.
+•	The readFile function returns a promise, which resolves to the file content or rejects with an error.
+
+Q.19.b: Animation Effect using React Transitions
+import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import './styles.css'; // Import styles for animations
+
+function AnimatedComponent() {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>
+        Toggle Message
+      </button>
+      <CSSTransition
+        in={show}
+        timeout={300}
+        classNames="fade"
+        unmountOnExit
+      >
+        <div className="message">Hello, I am animated!</div>
+      </CSSTransition>
+    </div>
+  );
+}
+
+export default AnimatedComponent;
+styles.css:
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+Explanation:
+•	We use the CSSTransition component from react-transition-group to handle transitions.
+•	When the button is clicked, the show state toggles, causing the message to fade in and out based on the defined CSS classes.
+
