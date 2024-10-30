@@ -1,0 +1,950 @@
+Here's a consolidated debugged version of each code snippet from the document, arranged by question set:
+
+---
+
+### **Question Set 1**
+
+**Q1.a:** Arrow Functions in ES6
+```javascript
+const add = (a, b) => a + b;
+const result = add(5, 3);
+console.log(`The sum is: ${result}`);
+```
+
+**Q1.b:** HTTP Server in Node.js
+```javascript
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, World!\n');
+});
+
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});
+```
+
+---
+
+### **Question Set 2**
+
+**Q2.a:** DOM Manipulation in JavaScript
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1 id="heading">Hello!</h1>
+    <button id="changeText">Change Text</button>
+
+    <script>
+        const button = document.getElementById('changeText');
+        button.addEventListener('click', () => {
+            const heading = document.getElementById('heading');
+            heading.textContent = 'Text Changed!';
+        });
+    </script>
+</body>
+</html>
+```
+
+**Q2.b:** useEffect in React
+```javascript
+import React, { useEffect, useState } from 'react';
+
+function ExampleComponent() {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `Count: ${count}`;
+    }, [count]);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+}
+
+export default ExampleComponent;
+```
+
+---
+
+### **Question Set 3**
+
+**Q3.a:** Class with Inheritance in ES6
+```javascript
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog('Rex');
+dog.speak(); // Output: Rex barks.
+```
+
+**Q3.b:** Event Handling in React
+```javascript
+import React from 'react';
+
+function EventExample() {
+    const handleClick = () => {
+        alert('Button clicked!');
+    };
+
+    return (
+        <button onClick={handleClick}>Click Me</button>
+    );
+}
+
+export default EventExample;
+```
+
+---
+
+### **Question Set 4**
+
+**Q4.a:** Promises in Node.js
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+    const success = true;
+    if (success) {
+        resolve('Promise resolved successfully!');
+    } else {
+        reject('Promise rejected.');
+    }
+});
+
+myPromise
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
+```
+
+**Q4.b:** Controlled Form in React
+```javascript
+import React, { useState } from 'react';
+
+function ControlledForm() {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Submitted: ${inputValue}`);
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input type="text" value={inputValue} onChange={handleChange} />
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+
+export default ControlledForm;
+```
+
+---
+
+### **Question Set 5**
+
+**Q5.a:** Fetching Data from an API in Node.js
+```javascript
+const fetch = require('node-fetch');
+
+fetch('https://api.github.com/users/github')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+```
+
+**Q5.b:** State Management in React
+```javascript
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+
+---
+
+Continuing with the debugged code for the remaining question sets:
+
+---
+
+### **Question Set 6**
+
+**Q6.a:** Destructuring Assignment in ES6
+```javascript
+const person = {
+    name: 'Alice',
+    age: 25,
+    city: 'Wonderland'
+};
+
+const { name, age } = person;
+console.log(`Name: ${name}, Age: ${age}`);
+```
+
+**Q6.b:** Routing in a React Application
+```javascript
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+function Home() {
+    return <h2>Home</h2>;
+}
+
+function About() {
+    return <h2>About</h2>;
+}
+
+function App() {
+    return (
+        <Router>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+            </Switch>
+        </Router>
+    );
+}
+
+export default App;
+```
+
+---
+
+### **Question Set 7**
+
+**Q7.a:** Iterators in JavaScript
+```javascript
+function* idGenerator() {
+    let id = 1;
+    while (true) {
+        yield id++;
+    }
+}
+
+const generator = idGenerator();
+
+console.log(generator.next().value); // 1
+console.log(generator.next().value); // 2
+console.log(generator.next().value); // 3
+```
+
+**Q7.b:** Event Emitter in Node.js
+```javascript
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+myEmitter.on('event', () => {
+    console.log('An event occurred!');
+});
+
+myEmitter.emit('event');
+```
+
+---
+
+### **Question Set 8**
+
+**Q8.a:** React Animation with CSS Transitions
+```javascript
+import React, { useState } from 'react';
+import './App.css';
+
+function AnimatedBox() {
+    const [isActive, setIsActive] = useState(false);
+
+    return (
+        <div>
+            <div className={`box ${isActive ? 'active' : ''}`} />
+            <button onClick={() => setIsActive(!isActive)}>Toggle Animation</button>
+        </div>
+    );
+}
+
+export default AnimatedBox;
+```
+
+**App.css**
+```css
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: transform 0.5s;
+}
+
+.box.active {
+    transform: scale(1.5);
+}
+```
+
+**Q8.b:** Generator Function for Number Sequence
+```javascript
+function* numberSequence() {
+    let i = 1;
+    while (i <= 5) {
+        yield i++;
+    }
+}
+
+const sequence = numberSequence();
+for (let num of sequence) {
+    console.log(num); // Outputs: 1, 2, 3, 4, 5
+}
+```
+
+---
+
+### **Question Set 9**
+
+**Q9.a:** Dynamic CSS Styling with JavaScript
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic CSS</title>
+</head>
+<body>
+    <div id="box" style="width: 100px; height: 100px; background-color: blue;"></div>
+    <button id="changeColor">Change Color</button>
+
+    <script>
+        const button = document.getElementById('changeColor');
+        button.addEventListener('click', () => {
+            const box = document.getElementById('box');
+            box.style.backgroundColor = box.style.backgroundColor === 'red' ? 'blue' : 'red';
+        });
+    </script>
+</body>
+</html>
+```
+
+**Q9.b:** React Props Demonstration
+```javascript
+import React from 'react';
+
+function Greeting({ name }) {
+    return <h1>Hello, {name}!</h1>;
+}
+
+function App() {
+    return <Greeting name="Alice" />;
+}
+
+export default App;
+```
+
+---
+
+### **Question Set 10**
+
+**Q10.a:** Asynchronous Programming using Callbacks in Node.js
+```javascript
+const fs = require('fs');
+
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+```
+
+**Q10.b:** Custom Hook in React
+```javascript
+import { useState, useEffect } from 'react';
+
+function useWindowWidth() {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return width;
+}
+
+function App() {
+    const width = useWindowWidth();
+
+    return <h1>Window width: {width}px</h1>;
+}
+
+export default App;
+```
+
+---
+
+### **Question Set 11**
+
+**Q11.a:** Array Methods (map, filter, reduce) in ES6
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// Using map
+const doubled = numbers.map(num => num * 2);
+console.log('Doubled:', doubled);
+
+// Using filter
+const evens = numbers.filter(num => num % 2 === 0);
+console.log('Evens:', evens);
+
+// Using reduce
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log('Sum:', sum);
+```
+
+**Q11.b:** Bundling React Application with Webpack
+1. **webpack.config.js**
+    ```javascript
+    const path = require('path');
+
+    module.exports = {
+        entry: './src/index.js',
+        output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'bundle.js'
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-react']
+                        }
+                    }
+                }
+            ]
+        },
+        devtool: 'source-map',
+        mode: 'development'
+    };
+    ```
+
+2. **package.json scripts**
+    ```json
+    "scripts": {
+        "build": "webpack"
+    }
+    ```
+
+---
+
+### **Question Set 12**
+
+**Q12.a:** Fetching Data from an API in React
+```javascript
+import React, { useEffect, useState } from 'react';
+
+function UserList() {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(data => setUsers(data))
+            .catch(error => console.error('Error fetching users:', error));
+    }, []);
+
+    return (
+        <ul>
+            {users.map(user => (
+                <li key={user.id}>{user.name}</li>
+            ))}
+        </ul>
+    );
+}
+
+export default UserList;
+```
+
+**Q12.b:** Buffer Class in Node.js
+```javascript
+const buffer = Buffer.from('Hello, World!', 'utf8');
+
+console.log('Buffer content:', buffer);
+console.log('Buffer to string:', buffer.toString());
+```
+
+---
+
+### **Question Set 13**
+
+**Q13.a:** Template Literals in ES6
+```javascript
+const name = 'Alice';
+const age = 25;
+const greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+
+console.log(greeting);
+```
+
+**Q13.b:** Nested Routes in React Router
+```javascript
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+function Home() {
+    return <h2>Home</h2>;
+}
+
+function About() {
+    return (
+        <div>
+            <h2>About</h2>
+            <Link to="/about/team">Our Team</Link>
+            <Link to="/about/mission">Our Mission</Link>
+            <Switch>
+                <Route path="/about/team" component={Team} />
+                <Route path="/about/mission" component={Mission} />
+            </Switch>
+        </div>
+    );
+}
+
+function Team() {
+    return <h3>Our Team</h3>;
+}
+
+function Mission() {
+    return <h3>Our Mission</h3>;
+}
+
+function App() {
+    return (
+        <Router>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+            </Switch>
+        </Router>
+    );
+}
+
+export default App;
+```
+
+---
+
+### **Question Set 14**
+
+**Q14.a:** Reading and Writing Files in Node.js
+```javascript
+const fs = require('fs');
+
+// Writing to a file
+fs.writeFile('example.txt', 'Hello, Node.js!', (err) => {
+    if (err) {
+        console.error('Error writing file:', err);
+        return;
+    }
+    console.log('File written successfully.');
+
+    // Reading from the file
+    fs.readFile('example.txt', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return;
+        }
+        console.log('File
+
+ content:', data);
+    });
+});
+```
+
+**Q14.b:** Lifecycle Methods in React Class Component
+```javascript
+import React from 'react';
+
+class LifecycleExample extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+        console.log('Constructor');
+    }
+
+    componentDidMount() {
+        console.log('Component did mount');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('Component did update');
+    }
+
+    componentWillUnmount() {
+        console.log('Component will unmount');
+    }
+
+    increment = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+
+    render() {
+        console.log('Render');
+        return (
+            <div>
+                <p>Count: {this.state.count}</p>
+                <button onClick={this.increment}>Increment</button>
+            </div>
+        );
+    }
+}
+
+export default LifecycleExample;
+```
+
+---
+
+Here’s the debugged code for the remaining question sets, starting with Question Set 15:
+
+---
+
+### **Question Set 15**
+
+**Q15.a:** Using `Promise.all()` in Node.js
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'foo'));
+const promise3 = new Promise((resolve, reject) => setTimeout(reject, 200, 'Error!'));
+
+Promise.all([promise1, promise2])
+    .then(values => {
+        console.log('Resolved values:', values);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+**Q15.b:** Controlled and Uncontrolled Components in React
+```javascript
+import React, { useRef, useState } from 'react';
+
+function ControlledUncontrolled() {
+    const [controlledValue, setControlledValue] = useState('');
+    const uncontrolledInput = useRef(null);
+
+    const handleControlledChange = (e) => {
+        setControlledValue(e.target.value);
+    };
+
+    const handleUncontrolledSubmit = (e) => {
+        e.preventDefault();
+        alert(`Uncontrolled input value: ${uncontrolledInput.current.value}`);
+    };
+
+    return (
+        <div>
+            <h2>Controlled Component</h2>
+            <input type="text" value={controlledValue} onChange={handleControlledChange} />
+            <h2>Uncontrolled Component</h2>
+            <form onSubmit={handleUncontrolledSubmit}>
+                <input type="text" ref={uncontrolledInput} />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    );
+}
+
+export default ControlledUncontrolled;
+```
+
+---
+
+### **Question Set 16**
+
+**Q16.a:** Simple Counter using Hooks in React
+```javascript
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
+            <button onClick={() => setCount(0)}>Reset</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+
+**Q16.b:** Post Data to an API in Node.js
+```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+
+app.post('/api/data', (req, res) => {
+    const data = req.body;
+    console.log('Data received:', data);
+    res.status(200).send({ message: 'Data received successfully!', receivedData: data });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+```
+
+---
+
+### **Question Set 17**
+
+**Q17.a:** Spread Operator in ES6
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // Output: [1, 2, 3, 4, 5]
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 };
+console.log(obj2); // Output: { a: 1, b: 2, c: 3 }
+```
+
+**Q17.b:** Event Handler in a React Component
+```javascript
+import React from 'react';
+
+function ClickHandlerComponent() {
+    const handleClick = () => {
+        alert('Button clicked!');
+    };
+
+    return (
+        <div>
+            <button onClick={handleClick}>Click Me</button>
+        </div>
+    );
+}
+
+export default ClickHandlerComponent;
+```
+
+---
+
+### **Question Set 18**
+
+**Q18.a:** Module Exports and Imports in Node.js
+
+*module.js*
+```javascript
+const greet = (name) => {
+    return `Hello, ${name}!`;
+};
+
+module.exports = greet;
+```
+
+*index.js*
+```javascript
+const greet = require('./module');
+console.log(greet('Alice')); // Output: Hello, Alice!
+```
+
+**Q18.b:** `setTimeout` in an Asynchronous Function in React
+```javascript
+import React, { useEffect, useState } from 'react';
+
+function DelayedMessage() {
+    const [message, setMessage] = useState('');
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMessage('Hello, World!');
+        }, 3000); // 3 seconds delay
+
+        return () => clearTimeout(timer); // Clean up the timer
+    }, []);
+
+    return <div>{message}</div>;
+}
+
+export default DelayedMessage;
+```
+
+---
+
+### **Question Set 19**
+
+**Q19.a:** Promise to Handle Asynchronous Operations in Node.js
+```javascript
+const fs = require('fs').promises;
+
+function readFile(filePath) {
+    return fs.readFile(filePath, 'utf-8')
+        .then(data => {
+            console.log('File content:', data);
+        })
+        .catch(err => {
+            console.error('Error reading file:', err);
+        });
+}
+
+readFile('example.txt');
+```
+
+**Q19.b:** Animation Effect using React Transitions
+```javascript
+import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import './styles.css';
+
+function AnimatedComponent() {
+    const [show, setShow] = useState(false);
+
+    return (
+        <div>
+            <button onClick={() => setShow(!show)}>Toggle Message</button>
+            <CSSTransition in={show} timeout={300} classNames="fade" unmountOnExit>
+                <div className="message">Hello, I am animated!</div>
+            </CSSTransition>
+        </div>
+    );
+}
+
+export default AnimatedComponent;
+```
+
+*styles.css*
+```css
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+```
+
+---
+
+### **Question Set 20**
+
+**Q20.a:** CRUD Operations in Node.js with Express
+```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+app.use(bodyParser.json());
+
+let items = [];
+
+app.post('/items', (req, res) => {
+    const item = req.body;
+    items.push(item);
+    res.status(201).send({ message: 'Item added', item });
+});
+
+app.get('/items', (req, res) => {
+    res.send(items);
+});
+
+app.put('/items/:id', (req, res) => {
+    const { id } = req.params;
+    const updatedItem = req.body;
+    items = items.map(item => (item.id === parseInt(id) ? updatedItem : item));
+    res.send({ message: 'Item updated', updatedItem });
+});
+
+app.delete('/items/:id', (req, res) => {
+    const { id } = req.params;
+    items = items.filter(item => item.id !== parseInt(id));
+    res.send({ message: 'Item deleted' });
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+```
+
+**Q20.b:** Higher-Order Components in React
+```javascript
+import React from 'react';
+
+function withLogging(WrappedComponent) {
+    return function WithLogging(props) {
+        console.log(`Rendering component: ${WrappedComponent.name}`);
+        return <WrappedComponent {...props} />;
+    };
+}
+
+function HelloWorld() {
+    return <h1>Hello, World!</h1>;
+}
+
+export default withLogging(HelloWorld);
+```
+
+---
+
+This completes the debugged and cleaned-up code for all question sets. Let me know if you need further assistance or have any questions about specific sections!
+
